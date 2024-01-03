@@ -41,8 +41,8 @@ Kotlin 공식 문서의 [Coding Convention](https://kotlinlang.org/docs/coding-c
       object EmptyDeclarationProcessor : DeclarationProcessor() { /*...*/ }
       ```
 
-  * ### 1.4 Function
-    * 함수 이름은 카멜 표기법(```camel Case```)으로 작성되며, 일반적으로 동사 또는 동사구를 사용한다. 
+  * ### 1.4 Methods
+    * 카멜 표기법(```camel Case```)으로 작성되며, 일반적으로 동사 또는 동사구를 사용한다. 
       ```kotlin
       fun processDeclarations() { /*...*/ }
       var declarationCount = 1
@@ -55,6 +55,53 @@ Kotlin 공식 문서의 [Coding Convention](https://kotlinlang.org/docs/coding-c
          fun Foo(): Foo { return FooImpl() }
          ```
          
+    * 속성에 접근하는 메서드 명의 접두사는 ```get```, ```set```을 사용한다.
+      ```kotlin
+      public void setDisplayName
+      public void getDisplayName
+      ```
+    * 데이터를 조회하는 메소드명의 접두사는 ```find```을 사용한다.
+      ```kotlin
+      public void findData(String data){}
+      ```
+    * 데이터를 입력하는 메소드명의 접두사는 ```input```을 사용한다.
+      ```kotlin
+      public void inputData(HashMap data){}
+      ```
+    * 데이터를 수정하는 메소드명의 접두사는 ```modify```을 사용한다.
+      ```kotlin
+      public void deleteData(HashMap data){}
+      ```
+    * 데이터를 삭제하는 메소드명의 접두사는 ```delete```을 사용한다.
+      ```kotlin
+      public void setDisplayName
+      public void getDisplayName
+      ```
+    * 데이터를 초기화하는 메서드 명의 접두사는 ```initialize```을 사용한다.
+      ```kotlin
+      public void initData(HashMap data){}
+      ```
+    * 데이터가 있는지 확인하는 메소드명의 접두사는 ```has```를 사용한다.
+      ```kotlin
+      public void hasData(){}
+      ```
+    * 새로운 객체를 만든 뒤 해당 객체를 리턴해주는 메서드 명의 접두사는 ```create```를 사용한다.
+      ```kotlin
+      public void createAccount(){}
+      ```
+    * 해당 객체를 다른 형태의 객체로 변환해주는 메서드 명의 접두사는 ```to```를 사용한다.
+      ```kotlin
+      public void toString(){}
+      ```
+    * 해당 객체가 복수인지 단일인지 구분하는 메서드 명의 접미사는 ```s```를 사용한다.
+      ```kotlin
+      public void getMembers(){}
+      ```
+    * B를 기준으로 A를 하겠다는 메소드명의 전치사는 ```By```를 사용한다.
+      ```kotlin
+      public void getUserByName(String name){}
+      ```
+  
   * ### 1.5 변수(variable)
     * boolean
      *  is 용법
