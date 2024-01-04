@@ -70,12 +70,11 @@ Kotlin 공식 문서의 [Coding Convention](https://kotlinlang.org/docs/coding-c
       ```
     * 데이터를 수정하는 메소드명의 접두사는 ```modify```을 사용한다.
       ```kotlin
-      public void deleteData(HashMap data){}
+      public void modifyData(HashMap data){}
       ```
     * 데이터를 삭제하는 메소드명의 접두사는 ```delete```을 사용한다.
       ```kotlin
-      public void setDisplayName
-      public void getDisplayName
+      public void deleteData(HashMap data){}
       ```
     * 데이터를 초기화하는 메서드 명의 접두사는 ```initialize```을 사용한다.
       ```kotlin
