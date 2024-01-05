@@ -221,6 +221,14 @@ Kotlin 공식 문서의 [Coding Convention](https://kotlinlang.org/docs/coding-c
       ```
     * 아직 Android 런타임에서는 지원되지 않는다.
 
+ * ### 1.8 useCase
+    * 동사 + 대상 + UseCase 형식으로 선언한다.
+     ```kotlin
+    class FormatDateUseCase(userRepository: UserRepository) {
+        operator fun invoke() = userRepository.getAllUser()
+     }
+     ```
+
 ## 2.Formatting
   ```IntelliJ``` 에서 코드 컨벤션을 설정 방법.
    1. IntelliJ 설정창(```command(⌘)``` + ```,```)을 열어 상단 검색창 ```Kotlin```을 입력
