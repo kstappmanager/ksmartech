@@ -222,13 +222,54 @@ Kotlin 공식 문서의 [Coding Convention](https://kotlinlang.org/docs/coding-c
     * 아직 Android 런타임에서는 지원되지 않는다.
 
  * ### 1.8 useCase
-    * 동사 + 대상 + UseCase 형식으로 선언한다.
+    1) 동사 + 대상 + UseCase 형식으로 선언한다.
      ```kotlin
-    class FormatDateUseCase(userRepository: UserRepository) {
+     class FormatDateUseCase(userRepository: UserRepository) {
         operator fun invoke() = userRepository.getAllUser()
      }
      ```
+    2) usecase 추상화
+     추상화가 필요한 경우 다음과 같이 사용한다. (무분별한 추상화로 오버엔지니어링 지양)
+     a. 동일한 비즈니스 로직을 가지지만 서로 다른 데이터 소스를 사용하는 경우
+     b. 동일한 문제를 해결하는 데 여러 알고리즘이나 접근 방법이 가능할 때, 각기 다른 알고리즘을 적용한 여러 유즈케이스 구현
+     c. 개발 또는 테스트 환경에서는 실제 운영 환경과 다른 구현을 사용
+     d. 다양한 플랫폼이나 장치에서 실행될 때 각각에 최적화된 구현을 제공
+     e. 기능 플래그나 A/B 테스팅을 통해 새로운 기능을 점진적으로 롤아웃하거나 사용자 반응을 테스트할 때, 다양한 유즈케이스 구현
 
+     a에 대한 예시는 다음과 같다.
+     ```kotlin
+     interface GetUserUseCase {
+        operator fun getUser(userId: String): User
+     }
+     class GetRemoteUserUseCase @Inject constructor(
+     private val userRepository: UserRepository
+     ) : GetUserUseCase {
+         override suspend fun getUser(userId: String): User {
+             // 서버에서 사용자 정보를 가져오는 로직
+             return userRepository.getRemoteUser(userId)
+         }
+     }
+     class GetLocalUserUseCase @Inject constructor(
+         private val userRepository: UserRepository
+     ) : GetUserUseCase {
+         override suspend fun getUser(userId: String): User {
+             // 로컬 데이터베이스에서 사용자 정보를 가져오는 로직
+             return userRepository.getLocalUser(userId)
+         }
+     }
+     ```
+     힐트 모듈 설정
+     ```kotlin
+     @Module
+     @InstallIn(ViewModelComponent::class)
+     abstract class UseCaseModule {
+         @Binds
+         abstract fun bindGetLocalUserUseCase(impl: GetLocalUserUseCase): GetUserUseCase
+         @Binds
+         abstract fun bindGetRemoteUserUseCase(impl: GetRemoteUserUseCase): GetUserUseCase
+     }
+     ```
+       
 ## 2.Formatting
   ```IntelliJ``` 에서 코드 컨벤션을 설정 방법.
    1. IntelliJ 설정창(```command(⌘)``` + ```,```)을 열어 상단 검색창 ```Kotlin```을 입력
