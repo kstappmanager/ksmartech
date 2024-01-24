@@ -8,7 +8,8 @@
 ---
 
    ### 1.2 클린 아키텍처 구조   
-  ![image](https://github.com/kstappmanager/ksmartech/assets/152848192/051383c4-02cd-4d54-b452-b4a74bd0a5d9)
+  ![image](https://github.com/kstappmanager/ksmartech/assets/152848192/d59f42a6-59b0-44aa-9d94-04413520a519)
+
   - ### Domain Layer
        - 클린 아키텍처 핵심 계층 계층
        - 애플리케이션의 비즈니스 로직과 정책을 정의
