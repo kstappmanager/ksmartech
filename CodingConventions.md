@@ -74,36 +74,28 @@ Kotlin 공식 문서의 [Coding Convention](https://kotlinlang.org/docs/coding-c
       ```
     * 데이터를 삭제하는 메소드명의 접두사는 ```delete```을 사용한다.
       ```kotlin
-     fun deleteUserData(id: Int): Boolean {
-         return false 
-     }      
-     ```
+      fun deleteUserData(id: Int): Boolean {}
+      ```
     * 데이터를 초기화하는 메서드 명의 접두사는 ```initialize```을 사용한다.
       ```kotlin
       fun initData() {}
-     ```
+      ```
     * 데이터가 있는지 확인하는 메소드명의 접두사는 ```has```를 사용한다.
       ```kotlin
-      fun hasUserData(id: Int): Boolean {
-          return false 
-      }
+      fun hasUserData(id: Int): Boolean {}
       ```
     * 새로운 객체를 만든 뒤 해당 객체를 리턴해주는 메서드 명의 접두사는 ```create```를 사용한다.
       ```kotlin
-      fun createUser(): User {
-          return User() 
-      }      
+      fun createUser(): User {}      
       ```
     * 해당 객체를 다른 형태의 객체로 변환해주는 메서드 명의 접두사는 ```to```를 사용한다.
       ```kotlin
-      fun toStringId(): String {
-          return id.toString()
-      }
+      fun toStringId(): String {}
       ```
     * 해당 객체가 복수인지 단일인지 구분하는 메서드 명의 접미사는 ```s```를 사용한다.
       ```kotlin
-     fun hasUserData(users: List<User>): Boolean {}      
-     ```
+      fun getUsers(): List<User> {}
+      ```
     * B를 기준으로 A를 하겠다는 메소드명의 전치사는 ```By```를 사용한다.
       ```kotlin
       fun findUserById(id: Int): User? {}
