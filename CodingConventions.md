@@ -104,39 +104,34 @@ Kotlin 공식 문서의 [Coding Convention](https://kotlinlang.org/docs/coding-c
   * ### 1.5 변수(variable)
     * boolean
      *  is 용법
-        1. is + 명사
-        (```무엇```)인가?" 라는 뜻으로 쓰인다.
-
-         ```kotlin
-         boolean isStudent; // user는 학생인가
-         ```
-
-        2. is + 현재진행형 (~ing)
-        ```~하는 중인가?``` 라는 뜻으로 쓰인다.
+        1. is + 명사 (```무엇```)인가?" 라는 뜻으로 쓰인다.
         ```kotlin
-        boolean isExecuting; // 실행 중인가?
-        boolean isPending; // 대기 중인가?
-         ```
-        
-       3. is + 형용사 => 형용사 / ~ed(수동태)
-          
-         ```kotlin
-        boolean isSelected;
-        boolean isHidden;
-         ```
+        val isStudent: Boolean // user는 학생인가
+        ```
+      
+        2. is + 현재진행형 (~ing) ```~하는 중인가?``` 라는 뜻으로 쓰인다.
+        ```kotlin
+        val isExecuting: Boolean // 실행 중인가?
+        val isPending: Boolean // 대기 중인가?
+        ```
+
+        3. is + 형용사 => 형용사 / ~ed(수동태)
+        ```kotlin
+        val isSelected: Boolean
+        val isHidden: Boolean
+        ```
 
      *  has 용법
-      1. has + 명사
-      ~를 가지고 있는가?
-         ```kotlin
-        boolean hasICloudAccount; // iCloud 계정을 가지고 있는가
-        boolean hasVideo; // video를 가지고 있는가?
-         ```
-      2. has + 과거분사 => 현재완료
-      과거에 완료된 것이 현재까지 유지가 되고 있다. ~가 유지되고 있는가?
-         ```kotlin
-       boolean hasConnected; // 연결되어 있는가?
-       boolean hasEnded; // 끝났는가?
+        1. has + 명사 ```~를 가지고 있는가?```라는 뜻으로 쓰인다.
+        ```kotlin
+        val hasICloudAccount: Boolean // iCloud 계정을 가지고 있는가
+        val hasVideo: Boolean // video를 가지고 있는가?
+        ```
+        2. has + 과거분사 => 현재완료
+           과거에 완료된 것이 현재까지 유지가 되고 있다. ```~가 유지되고 있는가?``` 라는 뜻으로 쓰인다.
+        ```kotlin
+        val hasConnected: Boolean // 연결되어 있는가?
+        val hasEnded: Boolean // 끝났는가?
         ```
      
      *  조동사 + 동사원형
@@ -144,23 +139,23 @@ Kotlin 공식 문서의 [Coding Convention](https://kotlinlang.org/docs/coding-c
          can "~ 할 수 있는가?"
          should, will "~ 해야하는 가?", "~할 것인가?"
         
-         ```kotlin
-        boolean canEdit() { ... } // 편집할 수 있는가?
-         ```
+        ```kotlin
+        fun canEdit(): Boolean { ... } // 편집할 수 있는가?         
+        ```
         
       *  조동사 + 동사원형
-      ```supports``` : ~을 지원하는가?
-      ```includes``` : ~을 포함하는가?
-      ```shows``` : ~을 보여줄 것인가?
-      ```allows``` : ~을 허용할 것인가?
-      ```accepts``` : ~을 받아 주는가?
-      ```contains``` : ~을 포함하고 있는가?
-
+         ```supports``` : ~을 지원하는가?
+         ```includes``` : ~을 포함하는가?
+         ```shows``` : ~을 보여줄 것인가?
+         ```allows``` : ~을 허용할 것인가?
+         ```accepts``` : ~을 받아 주는가?
+         ```contains``` : ~을 포함하고 있는가?
+ 
          ```kotlin
-        boolean supportsVideo; // 비디오를 지원하는가?
-        boolean allowsEditing; // 편집을 허용하는가?
+         val supportsVideo: Boolean // 비디오를 지원하는가?
+         val allowsEditing: Boolean // 편집을 허용하는가?
          ```
-    
+        
   * ### 1.5 properties
     * ```const```로 선언된 프로퍼티나 Top-level 또는 ```object```에 선언된 ```val```은 대문자 밑줄로 구분된 스크림 스네이크 케이스(```screaming snake case```)로 작성한다.
       ```kotlin
