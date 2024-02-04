@@ -57,48 +57,56 @@ Kotlin 공식 문서의 [Coding Convention](https://kotlinlang.org/docs/coding-c
          
     * 속성에 접근하는 메서드 명의 접두사는 ```get```, ```set```을 사용한다.
       ```kotlin
-      public void setDisplayName
-      public void getDisplayName
+      fun setUserName(name: String) { userName = name }
+      fun getUserName(): String { return userName }
       ```
     * 데이터를 조회하는 메소드명의 접두사는 ```find```을 사용한다.
       ```kotlin
-      public void findData(String data){}
+      fun findUserName(name: String): Boolean { return false }
       ```
     * 데이터를 입력하는 메소드명의 접두사는 ```input```을 사용한다.
       ```kotlin
-      public void inputData(HashMap data){}
+      fun inputUserName(name: String) { }
       ```
     * 데이터를 수정하는 메소드명의 접두사는 ```modify```을 사용한다.
       ```kotlin
-      public void modifyData(HashMap data){}
+      fun modifyUserName(name: String) { }
       ```
     * 데이터를 삭제하는 메소드명의 접두사는 ```delete```을 사용한다.
       ```kotlin
-      public void deleteData(HashMap data){}
-      ```
+     fun deleteUserData(id: Int): Boolean {
+         return false 
+     }      
+     ```
     * 데이터를 초기화하는 메서드 명의 접두사는 ```initialize```을 사용한다.
       ```kotlin
-      public void initData(HashMap data){}
-      ```
+      fun initData() {}
+     ```
     * 데이터가 있는지 확인하는 메소드명의 접두사는 ```has```를 사용한다.
       ```kotlin
-      public void hasData(){}
+      fun hasUserData(id: Int): Boolean {
+          return false 
+      }
       ```
     * 새로운 객체를 만든 뒤 해당 객체를 리턴해주는 메서드 명의 접두사는 ```create```를 사용한다.
       ```kotlin
-      public void createAccount(){}
+      fun createUser(): User {
+          return User() 
+      }      
       ```
     * 해당 객체를 다른 형태의 객체로 변환해주는 메서드 명의 접두사는 ```to```를 사용한다.
       ```kotlin
-      public void toString(){}
+      fun toStringId(): String {
+          return id.toString()
+      }
       ```
     * 해당 객체가 복수인지 단일인지 구분하는 메서드 명의 접미사는 ```s```를 사용한다.
       ```kotlin
-      public void getMembers(){}
-      ```
+     fun hasUserData(users: List<User>): Boolean {}      
+     ```
     * B를 기준으로 A를 하겠다는 메소드명의 전치사는 ```By```를 사용한다.
       ```kotlin
-      public void getUserByName(String name){}
+      fun findUserById(id: Int): User? {}
       ```
   
   * ### 1.5 변수(variable)
