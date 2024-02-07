@@ -25,11 +25,16 @@
   - ### Data Layer
        - Database와 API 관련된 것들이 정의되어 있는 Layer
        - Domain 계층에 의존하며 Domain의 Repository 인터페이스를 구현
+       - 로컬 데이터 베이스, 원격 데이터 소스, 파일 시스템 등 다양한 데이터 소스로부터 데이터를 추출하고 저장하는 과정을 추상화 한다.
        - DataSource, DAO, Entity 등이 이곳에 정의 되어야 함
-   
+       - 원격 서버와의 통신을 관리하며, API의 호출을 통해 데이터를 가져오는 곳
+            
   - ### Presentation Layer
        - UI 및 각종 이벤트를 처리하는 레이어
        - viewModel도 이곳에 포함된다.
+       - Domain Layer나 Data Layer로부터 받은 데이터를 UI 컴포넌트에 바인딩 한다.
+       - 사용자 인터페이스의 로딩 상태, 에러 메시지 표시, 데이터 표시 상태 등을 관리한다.
+       - 다른 화면으로의 전환을 관리한다.
 
 ---
 
