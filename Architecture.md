@@ -40,4 +40,8 @@
 
   
 ### 1.3 클린 아키텍처 예시 
+   - ### 패키지 구조
+   - ### Domain Layer
+   - ### Data Layer
+   - ### Presentation Layer
 
