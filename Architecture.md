@@ -47,6 +47,14 @@
      ![image](https://github.com/kstappmanager/ksmartech/assets/152848192/1e855a9f-a75f-4de4-8ec8-1fbbf092d92c)
 
    - ### Domain Layer
+     Domain Layer에서는 실제로 UI 작업에 사용할 모델이 필요하며, 해당 모델을 통해 원하는 데이터를 가져오기 위한 Repository의 interface와 Usecase 등을 선언한다.
+
+     ![image](https://github.com/kstappmanager/ksmartech/assets/152848192/81810dd8-7d17-47f1-87a5-bbd8371562fa)
+
+     Usecase는 해당 VM에서 어떤 것을 실행 하고자 하는지 직관적으로 파악 할 수 있으며 의존성을 줄일 수 있다는 장점을 가지고 있다.
+
+     ![image](https://github.com/kstappmanager/ksmartech/assets/152848192/d1b8cbc4-c3ea-439c-80ba-aed2cf3dbc74)
+
    - ### Data Layer
    - ### Presentation Layer
 
