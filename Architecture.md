@@ -41,6 +41,11 @@
   
 ### 1.3 클린 아키텍처 예시 
    - ### 패키지 구조
+     다음 과 같이 패키지 구조를 만들어 준다.
+     기존에 생성된 app 모듈은 제거해도 상관 없고 위의 3가지 모듈 중 하나로 생각하고 Refactor의 Rename을 통해 변경해주어도 무관하다.
+     
+     ![image](https://github.com/kstappmanager/ksmartech/assets/152848192/1e855a9f-a75f-4de4-8ec8-1fbbf092d92c)
+
    - ### Domain Layer
    - ### Data Layer
    - ### Presentation Layer
