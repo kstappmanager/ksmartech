@@ -40,8 +40,8 @@
 
   
 ### 1.3 클린 아키텍처 예시 
-   - ### 패키지 구조
-     다음 과 같이 패키지 구조를 만들어 준다.
+   - ### 모듈 구조
+     다음 과 같이 모듈 구조를 만들어 준다.
      기존에 생성된 app 모듈은 제거해도 상관 없고 위의 3가지 모듈 중 하나로 생각하고 Refactor의 Rename을 통해 변경해주어도 무관하다.
      
      ![image](https://github.com/kstappmanager/ksmartech/assets/152848192/1e855a9f-a75f-4de4-8ec8-1fbbf092d92c)
@@ -56,5 +56,9 @@
      ![image](https://github.com/kstappmanager/ksmartech/assets/152848192/d1b8cbc4-c3ea-439c-80ba-aed2cf3dbc74)
 
    - ### Data Layer
+     Data Layer는 로컬 DB 데이터와 서버 API 데이터를 모두 가져와서 사용하기 때문에 해당 패키지를 만들어 구분지어 준다.
+
+     ![image](https://github.com/kstappmanager/ksmartech/assets/152848192/45ee36da-801c-41f3-b596-6e182d47e638)
+
    - ### Presentation Layer
 
