@@ -680,8 +680,8 @@ Kotlin 공식 문서의 [Coding Convention](https://kotlinlang.org/docs/coding-c
 바닥글 // Footer
 ```
 
-* ### 4.3 타입 구분
-|구분|내용|
+ ### 4.3 타입 구분
+|구분|내용|
 |:---|:---|
 |feat|새로운 기능에 대한 커밋|
 |fix|버그 수정에 대한 커밋|
